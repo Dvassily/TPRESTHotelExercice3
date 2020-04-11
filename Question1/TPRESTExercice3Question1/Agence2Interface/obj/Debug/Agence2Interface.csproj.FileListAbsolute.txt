@@ -1,0 +1,15 @@
+C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\Agence2Interface\bin\Debug\Agence2Interface.exe.config
+C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\Agence2Interface\bin\Debug\Agence2Interface.exe
+C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\Agence2Interface\bin\Debug\Agence2Interface.pdb
+C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\Agence2Interface\bin\Debug\InterfaceAgence.dll
+C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\Agence2Interface\bin\Debug\HotelModel.dll
+C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\Agence2Interface\bin\Debug\HotelProtocol.dll
+C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\Agence2Interface\bin\Debug\InterfaceAgence.pdb
+C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\Agence2Interface\bin\Debug\HotelModel.pdb
+C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\Agence2Interface\bin\Debug\HotelProtocol.pdb
+C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\Agence2Interface\obj\Debug\Agence2Interface.csprojAssemblyReference.cache
+C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\Agence2Interface\obj\Debug\Agence2Interface.csproj.CopyComplete
+C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\Agence2Interface\obj\Debug\Agence2Interface.exe
+C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\Agence2Interface\obj\Debug\Agence2Interface.pdb
+C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\Agence2Interface\bin\Debug\Newtonsoft.Json.dll
+C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\Agence2Interface\bin\Debug\Newtonsoft.Json.xml

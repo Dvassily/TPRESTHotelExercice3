@@ -14,6 +14,7 @@ namespace Hotel2Service.Controllers
     [ApiController]
     public class RechercheController : ControllerBase
     {
+        private const long HOTEL_ID = 2;
         private readonly HotelContext _context;
 
         public RechercheController(HotelContext context)
@@ -50,7 +51,8 @@ namespace Hotel2Service.Controllers
                         DateArrivee = requete.DateArrivee,
                         DateDepart = requete.DateDepart,
                         Prix = c.PrixCalcule(agence),
-                        ChambreId = c.Id
+                        ChambreId = c.Id,
+                        HotelId = HOTEL_ID
                     };
 
                     _context.Offres.Add(offre);

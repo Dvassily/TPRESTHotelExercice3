@@ -1,0 +1,13 @@
+C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\InterfaceAgence\bin\Debug\netstandard2.0\InterfaceAgence.deps.json
+C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\InterfaceAgence\bin\Debug\netstandard2.0\InterfaceAgence.dll
+C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\InterfaceAgence\bin\Debug\netstandard2.0\HotelModel.dll
+C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\InterfaceAgence\bin\Debug\netstandard2.0\HotelProtocol.dll
+C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\InterfaceAgence\bin\Debug\netstandard2.0\HotelModel.pdb
+C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\InterfaceAgence\bin\Debug\netstandard2.0\HotelProtocol.pdb
+C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\InterfaceAgence\obj\Debug\netstandard2.0\InterfaceAgence.AssemblyInfoInputs.cache
+C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\InterfaceAgence\obj\Debug\netstandard2.0\InterfaceAgence.AssemblyInfo.cs
+C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\InterfaceAgence\obj\Debug\netstandard2.0\InterfaceAgence.csproj.CopyComplete
+C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\InterfaceAgence\bin\Debug\netstandard2.0\InterfaceAgence.pdb
+C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\InterfaceAgence\obj\Debug\netstandard2.0\InterfaceAgence.csprojAssemblyReference.cache
+C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\InterfaceAgence\obj\Debug\netstandard2.0\InterfaceAgence.dll
+C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\InterfaceAgence\obj\Debug\netstandard2.0\InterfaceAgence.pdb

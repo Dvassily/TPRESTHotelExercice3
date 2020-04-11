@@ -242,7 +242,6 @@ C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExerci
 C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\TPRESTExercice3Question1\bin\Debug\netcoreapp3.1\HotelModel.dll
 C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\TPRESTExercice3Question1\bin\Debug\netcoreapp3.1\HotelModel.pdb
 C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\TPRESTExercice3Question1\obj\Debug\netcoreapp3.1\Hotel1Service.csprojAssemblyReference.cache
-C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\TPRESTExercice3Question1\obj\Debug\netcoreapp3.1\Hotel1Service.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\TPRESTExercice3Question1\obj\Debug\netcoreapp3.1\Hotel1Service.AssemblyInfoInputs.cache
 C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\TPRESTExercice3Question1\obj\Debug\netcoreapp3.1\Hotel1Service.AssemblyInfo.cs
 C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\TPRESTExercice3Question1\obj\Debug\netcoreapp3.1\Hotel1Service.RazorTargetAssemblyInfo.cache
@@ -254,3 +253,4 @@ C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExerci
 C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\TPRESTExercice3Question1\obj\Debug\netcoreapp3.1\Hotel1Service.genruntimeconfig.cache
 C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\TPRESTExercice3Question1\bin\Debug\netcoreapp3.1\HotelProtocol.dll
 C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\TPRESTExercice3Question1\bin\Debug\netcoreapp3.1\HotelProtocol.pdb
+C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\TPRESTExercice3Question1\obj\Debug\netcoreapp3.1\Hotel1Service.MvcApplicationPartsAssemblyInfo.cache
