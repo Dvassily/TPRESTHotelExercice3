@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Hotel1Service.Models;
-using Hotel1Service.Protocol;
+using HotelProtocol;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace Hotel1Service.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("hotel1/[controller]")]
     [ApiController]
     public class ReservationController : ControllerBase
     {

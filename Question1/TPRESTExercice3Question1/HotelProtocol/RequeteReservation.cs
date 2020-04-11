@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Hotel1Service.Protocol
+namespace HotelProtocol
 {
     public class RequeteReservation
     {

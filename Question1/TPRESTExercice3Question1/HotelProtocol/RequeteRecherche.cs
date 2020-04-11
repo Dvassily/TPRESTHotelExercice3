@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Hotel1Service.Protocol
+namespace HotelProtocol
 {
     public class RequeteRecherche
     {

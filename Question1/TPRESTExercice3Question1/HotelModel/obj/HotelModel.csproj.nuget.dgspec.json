@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dalie\\source\\repos\\TPRESTExercice3Question1\\HotelModel\\HotelModel.csproj": {}
+    "C:\\Users\\dalie\\Source\\Repos\\Dvassily\\TPRESTHotelExercice3\\Question1\\TPRESTExercice3Question1\\HotelModel\\HotelModel.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dalie\\source\\repos\\TPRESTExercice3Question1\\HotelModel\\HotelModel.csproj": {
+    "C:\\Users\\dalie\\Source\\Repos\\Dvassily\\TPRESTHotelExercice3\\Question1\\TPRESTExercice3Question1\\HotelModel\\HotelModel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dalie\\source\\repos\\TPRESTExercice3Question1\\HotelModel\\HotelModel.csproj",
+        "projectUniqueName": "C:\\Users\\dalie\\Source\\Repos\\Dvassily\\TPRESTHotelExercice3\\Question1\\TPRESTExercice3Question1\\HotelModel\\HotelModel.csproj",
         "projectName": "HotelModel",
-        "projectPath": "C:\\Users\\dalie\\source\\repos\\TPRESTExercice3Question1\\HotelModel\\HotelModel.csproj",
+        "projectPath": "C:\\Users\\dalie\\Source\\Repos\\Dvassily\\TPRESTHotelExercice3\\Question1\\TPRESTExercice3Question1\\HotelModel\\HotelModel.csproj",
         "packagesPath": "C:\\Users\\dalie\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dalie\\source\\repos\\TPRESTExercice3Question1\\HotelModel\\obj\\",
+        "outputPath": "C:\\Users\\dalie\\Source\\Repos\\Dvassily\\TPRESTHotelExercice3\\Question1\\TPRESTExercice3Question1\\HotelModel\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

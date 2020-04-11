@@ -1,0 +1,7 @@
+C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\HotelProtocol\bin\Debug\netstandard2.0\HotelProtocol.deps.json
+C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\HotelProtocol\bin\Debug\netstandard2.0\HotelProtocol.dll
+C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\HotelProtocol\bin\Debug\netstandard2.0\HotelProtocol.pdb
+C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\HotelProtocol\obj\Debug\netstandard2.0\HotelProtocol.AssemblyInfoInputs.cache
+C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\HotelProtocol\obj\Debug\netstandard2.0\HotelProtocol.AssemblyInfo.cs
+C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\HotelProtocol\obj\Debug\netstandard2.0\HotelProtocol.dll
+C:\Users\dalie\Source\Repos\Dvassily\TPRESTHotelExercice3\Question1\TPRESTExercice3Question1\HotelProtocol\obj\Debug\netstandard2.0\HotelProtocol.pdb
