@@ -1,0 +1,8 @@
+C:\Users\dalie\source\repos\TPRESTExercice3Question1\HotelModel\bin\Debug\netstandard2.0\HotelModel.deps.json
+C:\Users\dalie\source\repos\TPRESTExercice3Question1\HotelModel\bin\Debug\netstandard2.0\HotelModel.dll
+C:\Users\dalie\source\repos\TPRESTExercice3Question1\HotelModel\obj\Debug\netstandard2.0\HotelModel.csprojAssemblyReference.cache
+C:\Users\dalie\source\repos\TPRESTExercice3Question1\HotelModel\obj\Debug\netstandard2.0\HotelModel.AssemblyInfoInputs.cache
+C:\Users\dalie\source\repos\TPRESTExercice3Question1\HotelModel\obj\Debug\netstandard2.0\HotelModel.AssemblyInfo.cs
+C:\Users\dalie\source\repos\TPRESTExercice3Question1\HotelModel\bin\Debug\netstandard2.0\HotelModel.pdb
+C:\Users\dalie\source\repos\TPRESTExercice3Question1\HotelModel\obj\Debug\netstandard2.0\HotelModel.dll
+C:\Users\dalie\source\repos\TPRESTExercice3Question1\HotelModel\obj\Debug\netstandard2.0\HotelModel.pdb
