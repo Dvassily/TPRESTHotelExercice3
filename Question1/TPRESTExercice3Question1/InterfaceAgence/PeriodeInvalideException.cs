@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 namespace InterfaceAgence
 {
     [Serializable]
-    internal class PeriodeInvalideException : Exception
+    public class PeriodeInvalideException : Exception
     {
         private DateTime dateArrivee;
         private DateTime dateDepart;

@@ -40,10 +40,15 @@ namespace Hotel2Service.Controllers
 
             List<HotelModel.Chambre> chambres = await _context.Chambres.ToListAsync();
             List<HotelModel.Reservation> reservations = await _context.Reservations.ToListAsync();
-            System.Diagnostics.Debug.WriteLine(reservations.Count());
+
             foreach (HotelModel.Chambre c in chambres)
             {
-                if (c.NombreDeLits >= requete.NombrePersonnes && c.estDisponible(requete.DateArrivee, requete.DateDepart, reservations))
+                bool litOk = c.NombreDeLits >= requete.NombrePersonnes;
+                bool dateOk = c.estDisponible(requete.DateArrivee, requete.DateDepart, reservations);
+                bool villeOk = requete.VilleHotel == _context.VilleHotel();
+                bool etoilesOk = requete.NombreEtoiles <= _context.NombreEtoiles();
+
+                if (litOk && dateOk && villeOk && etoilesOk)
                 {
                     HotelModel.Offre offre = new HotelModel.Offre
                     {
@@ -54,7 +59,11 @@ namespace Hotel2Service.Controllers
                         ChambreId = c.Id,
                         HotelId = HOTEL_ID,
                         UrlReservation = Request.Scheme + "://" + Request.Host + Request.PathBase + Url.Action("Reserver", "Reservation"),
-                        ImageChambreUrl = c.ImageUrl
+                        ImageChambreUrl = c.ImageUrl,
+                        NomHotel = _context.NomHotel(),
+                        VilleHotel = _context.VilleHotel(),
+                        AdresseHotel = _context.AdresseHotel(),
+                        NombreEtoiles = _context.NombreEtoiles()
                     };
 
                     _context.Offres.Add(offre);

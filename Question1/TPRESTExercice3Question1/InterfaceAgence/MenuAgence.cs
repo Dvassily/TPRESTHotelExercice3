@@ -8,7 +8,6 @@ namespace InterfaceAgence
 {
     public class MenuAgence
     {
-        private const string CHAINE_IGNORER = "*";
         private const string CHAINE_VILLE_SEJOUR = "Ville de séjour";
         private const string CHAINE_DATE_DEPART = "Date de départ";
         private const string CHAINE_DATE_ARRIVEE = "Date d'arrivée";
@@ -16,16 +15,12 @@ namespace InterfaceAgence
         private const string CHAINE_PRIX_MAXIMAL = "Prix maximal";
         private const string CHAINE_NOMBRE_ETOILE = "Nombre d'etoile";
         private const string CHAINE_NOMBRE_PERSONNE = "Nombre de personnes";
-        private const string CHAINE_ANNEE = "Année format YYYY";
-        private const string CHAINE_MOIS = "Mois format MM";
-        private const string CHAINE_JOUR = "Jour format DD";
         private const string CHAINE_RESULTAT_HOTEL = "Hotel : ";
         private const string CHAINE_RESULTAT_VILLE = "Ville : ";
         private const string CHAINE_RESULTAT_RUE = "Rue : ";
         private const string CHAINE_RESULTAT_PRIX = "Prix : ";
         private const string CHAINE_RESULTAT_NOMBRE_LIT = "Nombre de lit : ";
         private const string CHAINE_CHOIX_INVALIDE = "Choix invalide";
-        private const string CHAINE_POUR_IGNORER = " (* pour ignorer) : ";
         private const string CHAINE_MENU = "Choix : \n" +
                                            "1) Rechercher\n" +
                                            "2) Réserver\n" +
@@ -38,7 +33,8 @@ namespace InterfaceAgence
         private const string CHAINE_NUMERO_CARTE_BANCAIRE = "Numero de carte bancaire";
         private const string CHAINE_NUMERO_RESERVATION = "Numéro de reservation";
         private const string CHAINE_IDENTIFIANT_OFFRE = "Identifiant de l'offre";
-
+        private const string CHAINE_VILLE = "Ville";
+        private const string CHAINE_NOMBRE_ETOILES = "Nombre d'étoiles";
         private readonly string nomAgence;
         private readonly string identifiantAgence;
         private readonly string motDePasseAgence;
@@ -53,83 +49,15 @@ namespace InterfaceAgence
             this.Services.Add(new ClientRechercheHotelService("https://localhost:44309/hotel2/Recherche"));
         }
 
-        private bool verifierIgnorer(string entree)
-        {
-            if (string.Compare(entree, CHAINE_IGNORER) == 0)
-            {
-                return true;
-            }
-
-            return false;
-        }
-
-        private string SaisirChaine(string libelle, bool demanderIgnorer)
-        {
-            string affichage = libelle;
-
-            if (demanderIgnorer)
-            {
-                affichage += CHAINE_POUR_IGNORER;
-            }
-
-            affichage += " : ";
-
-            Console.WriteLine(affichage);
-
-            string chaine = Console.ReadLine();
-
-            if (demanderIgnorer && verifierIgnorer(chaine))
-            {
-                return null;
-            }
-
-            return chaine;
-        }
-
-        private int SaisirEntierPositif(string libelle, bool demanderIgnorer)
-        {
-            string affichage = libelle;
-
-            if (demanderIgnorer)
-            {
-                affichage += CHAINE_POUR_IGNORER;
-            }
-
-            affichage += " : ";
-
-            Console.WriteLine(affichage);
-
-            string entier = Console.ReadLine();
-
-            if (verifierIgnorer(entier))
-            {
-                return -1;
-            }
-
-            return Int32.Parse(entier);
-        }
-
-        private DateTime SaisirDate(string libelle, bool demanderIgnorer)
-        {
-            Console.WriteLine(libelle + " : ");
-            int year = SaisirEntierPositif(CHAINE_ANNEE, demanderIgnorer);
-            if (year == -1)
-            {
-                return default;
-            }
-            int month = SaisirEntierPositif(CHAINE_MOIS, demanderIgnorer);
-            int day = SaisirEntierPositif(CHAINE_JOUR, demanderIgnorer);
-
-            return new DateTime(year, month, day);
-        }
         private void MenuRechercher()
         {
-            DateTime dateArrivee = SaisirDate(CHAINE_DATE_ARRIVEE, true);
+            string villeHotel = SaisieHelper.SaisirChaine(CHAINE_VILLE, false);
+            DateTime dateArrivee = SaisieHelper.SaisirDate(CHAINE_DATE_ARRIVEE, true);
             DateTime dateDepart = DateTime.MaxValue;
 
             if (dateArrivee != default)
             {
-                dateDepart = SaisirDate(CHAINE_DATE_DEPART, true);
+                dateDepart = SaisieHelper.SaisirDate(CHAINE_DATE_DEPART, true);
             }
             else
             {
@@ -141,7 +69,8 @@ namespace InterfaceAgence
                 throw new PeriodeInvalideException(dateArrivee, dateDepart);
             }
 
-            int nbPersonne = SaisirEntierPositif(CHAINE_NOMBRE_PERSONNE, true);
+            int nbPersonne = SaisieHelper.SaisirEntierPositif(CHAINE_NOMBRE_PERSONNE, true);
+            int nombreEtoiles = SaisieHelper.SaisirEntierPositif(CHAINE_NOMBRE_ETOILES, true);
 
             List<Offre> offres = new List<Offre>();
             foreach (ClientRechercheHotelService client in Services)
@@ -149,9 +78,11 @@ namespace InterfaceAgence
                 RequeteRecherche requete = new RequeteRecherche();
                 requete.IdentifiantAgence = identifiantAgence;
                 requete.MotDePasseAgence = motDePasseAgence;
+                requete.VilleHotel = villeHotel;
                 requete.NombrePersonnes = nbPersonne;
                 requete.DateArrivee = dateArrivee;
                 requete.DateDepart = dateDepart;
+                requete.NombreEtoiles = nombreEtoiles;
 
                 offres.AddRange(client.Rechercher(requete).Result);
             }
@@ -166,7 +97,11 @@ namespace InterfaceAgence
 
         private void AfficherResultat(Offre offre)
         {
-            Console.WriteLine("Hotel : " + offre.HotelId);
+            Console.WriteLine("Identifiant de l'hotel : " + offre.HotelId);
+            Console.WriteLine("Nom de l'hotel : " + offre.NomHotel);
+            Console.WriteLine("Ville de l'hotel : " + offre.VilleHotel);
+            Console.WriteLine("Adresse de l'hotel : " + offre.AdresseHotel);
+            Console.WriteLine("Nombre d'étoiles : " + offre.NombreEtoiles);
             Console.WriteLine("Identifiant de l'offre : " + offre.Id);
             Console.WriteLine("Chambre : " + offre.ChambreId);
             Console.WriteLine("Image chambre : " + offre.ImageChambreUrl);
@@ -179,11 +114,11 @@ namespace InterfaceAgence
 
         private void MenuReserver()
         {
-            int identifiantHotel = SaisirEntierPositif(CHAINE_IDENTIFIANT_HOTEL, false);
-            int identifiantOffre = SaisirEntierPositif(CHAINE_IDENTIFIANT_OFFRE, false);
-            string nom = SaisirChaine(CHAINE_NOM_CLIENT, false);
-            string prenom = SaisirChaine(CHAINE_PRENOM_CLIENT, false);
-            string numeroCarte = SaisirChaine(CHAINE_NUMERO_CARTE_BANCAIRE, false);
+            int identifiantHotel = SaisieHelper.SaisirEntierPositif(CHAINE_IDENTIFIANT_HOTEL, false);
+            int identifiantOffre = SaisieHelper.SaisirEntierPositif(CHAINE_IDENTIFIANT_OFFRE, false);
+            string nom = SaisieHelper.SaisirChaine(CHAINE_NOM_CLIENT, false);
+            string prenom = SaisieHelper.SaisirChaine(CHAINE_PRENOM_CLIENT, false);
+            string numeroCarte = SaisieHelper.SaisirChaine(CHAINE_NUMERO_CARTE_BANCAIRE, false);
 
             Offre offre = trouverOffre(identifiantHotel, identifiantOffre);
 

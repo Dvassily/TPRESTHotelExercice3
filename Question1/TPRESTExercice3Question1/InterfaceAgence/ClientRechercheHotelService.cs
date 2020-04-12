@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace InterfaceAgence
 {
-    class ClientRechercheHotelService
+    public class ClientRechercheHotelService
     {
         private string Url;
         private HttpClient Client;
@@ -36,9 +36,7 @@ namespace InterfaceAgence
                 var content = await response.Content.ReadAsStringAsync();
 
                 List<Offre> offres = JsonConvert.DeserializeObject<List<Offre>>(content);
-                System.Diagnostics.Debug.WriteLine(content);
 
-                System.Diagnostics.Debug.WriteLine(offres);
                 return offres;
             }
 

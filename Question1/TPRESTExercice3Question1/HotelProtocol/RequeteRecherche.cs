@@ -9,5 +9,7 @@ namespace HotelProtocol
         public int NombrePersonnes { get; set; }
         public DateTime DateArrivee { get; set; }
         public DateTime DateDepart { get; set; }
+        public string VilleHotel { get; set; }
+        public int NombreEtoiles { get; set; }
     }
 }

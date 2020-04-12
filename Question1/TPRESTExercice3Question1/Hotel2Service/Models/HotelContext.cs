@@ -49,6 +49,31 @@ namespace Hotel2Service.Models
             return Offres.Count();
         }
 
+        public int IdentifiantHotel()
+        {
+            return 2;
+        }
+
+        public string NomHotel()
+        {
+            return "George";
+        }
+
+        public string VilleHotel()
+        {
+            return "Arles";
+        }
+
+        public string AdresseHotel()
+        {
+            return "30 rue Hij Klm";
+        }
+
+        public int NombreEtoiles()
+        {
+            return 3;
+        }
+
         public DbSet<HotelModel.Agence> Agences { get; set; }
         public DbSet<HotelModel.Chambre> Chambres { get; set; }
         public DbSet<HotelModel.Offre> Offres { get; set; }

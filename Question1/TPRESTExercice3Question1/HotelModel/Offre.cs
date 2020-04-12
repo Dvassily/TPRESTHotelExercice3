@@ -34,5 +34,17 @@ namespace HotelModel
 
         [JsonProperty("urlReservation")]
         public string UrlReservation { get; set; } = "";
+
+        [JsonProperty("nomHotel")]
+        public string NomHotel { get; set; }
+
+        [JsonProperty("villeHotel")]
+        public string VilleHotel { get; set; }
+
+        [JsonProperty("adresseHotel")]
+        public string AdresseHotel { get; set; }
+
+        [JsonProperty("nombreEtoiles")]
+        public int NombreEtoiles { get; set; }
     }
 }
