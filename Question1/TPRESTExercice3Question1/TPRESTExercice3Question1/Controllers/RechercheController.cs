@@ -37,7 +37,7 @@ namespace Hotel1Service.Controllers
                     agence = a;
                 }
             }
-
+            
             List<HotelModel.Chambre> chambres = await _context.Chambres.ToListAsync();
             List<HotelModel.Reservation> reservations = await _context.Reservations.ToListAsync();
             System.Diagnostics.Debug.WriteLine(reservations.Count());
@@ -52,7 +52,8 @@ namespace Hotel1Service.Controllers
                         DateDepart = requete.DateDepart,
                         Prix = c.PrixCalcule(agence),
                         ChambreId = c.Id,
-                        HotelId = HOTEL_ID
+                        HotelId = HOTEL_ID,
+                        UrlReservation = Request.Scheme + "://" + Request.Host + Request.PathBase + Url.Action("Reserver", "Reservation")
                     };
 
                     _context.Offres.Add(offre);

@@ -29,8 +29,7 @@ namespace InterfaceAgence
         private const string CHAINE_MENU = "Choix : \n" +
                                            "1) Rechercher\n" +
                                            "2) Réserver\n" +
-                                           "3) Consulter une réservation\n" +
-                                           "4) Quitter\n" +
+                                           "3) Quitter\n" +
                                            "> ";
         private const string CHAINE_IDENTIFIANT_HOTEL = "Identifiant hotel";
         private const string CHAINE_IDENTIFIANT_CHAMBRE = "Identifiant chambre";
@@ -38,19 +37,20 @@ namespace InterfaceAgence
         private const string CHAINE_PRENOM_CLIENT = "Prenom";
         private const string CHAINE_NUMERO_CARTE_BANCAIRE = "Numero de carte bancaire";
         private const string CHAINE_NUMERO_RESERVATION = "Numéro de reservation";
+        private const string CHAINE_IDENTIFIANT_OFFRE = "Identifiant de l'offre";
+
         private readonly string nomAgence;
-        private string identifiantAgence;
+        private readonly string identifiantAgence;
         private readonly string motDePasseAgence;
-
-        private Dictionary<int, ClientHotelService> Services = new Dictionary<int, ClientHotelService>();
-
+        private List<ClientRechercheHotelService> Services = new List<ClientRechercheHotelService>();
+        private List<Offre> Offres = new List<Offre>();
         public MenuAgence(string nomAgence, string identifiantAgence, string motDePasseAgence)
         {
             this.nomAgence = nomAgence;
             this.identifiantAgence = identifiantAgence;
             this.motDePasseAgence = motDePasseAgence;
-            this.Services.Add(1, new ClientHotelService("https://localhost:44393/hotel1/Recherche"));
-            this.Services.Add(2, new ClientHotelService("https://localhost:44309/hotel2/Recherche"));
+            this.Services.Add(new ClientRechercheHotelService("https://localhost:44393/hotel1/Recherche"));
+            this.Services.Add(new ClientRechercheHotelService("https://localhost:44309/hotel2/Recherche"));
         }
 
         private bool verifierIgnorer(string entree)
@@ -144,7 +144,7 @@ namespace InterfaceAgence
             int nbPersonne = SaisirEntierPositif(CHAINE_NOMBRE_PERSONNE, true);
 
             List<Offre> offres = new List<Offre>();
-            foreach (ClientHotelService client in Services.Values)
+            foreach (ClientRechercheHotelService client in Services)
             {
                 RequeteRecherche requete = new RequeteRecherche();
                 requete.IdentifiantAgence = identifiantAgence;
@@ -159,17 +159,64 @@ namespace InterfaceAgence
             foreach (Offre offre in offres)
             {
                 AfficherResultat(offre);
+
+                Offres.Add(offre);
             }
         }
 
         private void AfficherResultat(Offre offre)
         {
-            Console.WriteLine("Identifiant de l'offre : " + offre.Id);
             Console.WriteLine("Hotel : " + offre.HotelId);
+            Console.WriteLine("Identifiant de l'offre : " + offre.Id);
+            Console.WriteLine("Chambre : " + offre.ChambreId);
             Console.WriteLine("Date arrivee : " + offre.DateArrivee);
             Console.WriteLine("Date départ : " + offre.DateDepart);
-            Console.WriteLine("Nombre de lits : " + offre.DateDepart);
+            Console.WriteLine("Nombre de lits : " + offre.NombreDeLits);
             Console.WriteLine("Prix : " + offre.Prix);
+            Console.WriteLine();
+        }
+
+        private void MenuReserver()
+        {
+            int identifiantHotel = SaisirEntierPositif(CHAINE_IDENTIFIANT_HOTEL, false);
+            int identifiantOffre = SaisirEntierPositif(CHAINE_IDENTIFIANT_OFFRE, false);
+            string nom = SaisirChaine(CHAINE_NOM_CLIENT, false);
+            string prenom = SaisirChaine(CHAINE_PRENOM_CLIENT, false);
+            string numeroCarte = SaisirChaine(CHAINE_NUMERO_CARTE_BANCAIRE, false);
+
+            Offre offre = trouverOffre(identifiantHotel, identifiantOffre);
+
+            if (offre != null)
+            {
+                RequeteReservation requete = new RequeteReservation();
+                requete.IdentifiantAgence = identifiantAgence;
+                requete.MotDePasseAgence = motDePasseAgence;
+                requete.IdentifiantOffre = identifiantOffre;
+                requete.NomClient = nom;
+                requete.PrenomClient = prenom;
+                requete.NumeroCarteClient = numeroCarte;
+
+                ClientReservationHotelService client = new ClientReservationHotelService(offre.UrlReservation);
+                int numeroReservation = client.Reserver(requete).Result;
+
+                Console.WriteLine(CHAINE_NUMERO_RESERVATION + " : " + numeroReservation);
+            } else
+            {
+                Console.WriteLine("Erreur : l'offre " + identifiantOffre + " n'existe pas pour l'hotel " + identifiantHotel);
+            }
+        }
+
+        private Offre trouverOffre(int identifiantHotel, int identifiantOffre)
+        {
+            foreach (Offre offre in Offres)
+            {
+                if (offre.Id == identifiantOffre && offre.HotelId == identifiantHotel)
+                {
+                    return offre;
+                }
+            }
+
+            return null;
         }
 
         public bool AfficherMenu()
@@ -184,9 +231,9 @@ namespace InterfaceAgence
             }
             else if (choix == 2)
             {
-                // MenuReserver();
+                MenuReserver();
             }
-            else if (choix == 4)
+            else if (choix == 3)
             {
                 return false;
             }

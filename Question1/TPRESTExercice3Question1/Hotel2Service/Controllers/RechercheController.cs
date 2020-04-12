@@ -52,7 +52,8 @@ namespace Hotel2Service.Controllers
                         DateDepart = requete.DateDepart,
                         Prix = c.PrixCalcule(agence),
                         ChambreId = c.Id,
-                        HotelId = HOTEL_ID
+                        HotelId = HOTEL_ID,
+                        UrlReservation = Request.Scheme + "://" + Request.Host + Request.PathBase + Url.Action("Reserver", "Reservation")
                     };
 
                     _context.Offres.Add(offre);

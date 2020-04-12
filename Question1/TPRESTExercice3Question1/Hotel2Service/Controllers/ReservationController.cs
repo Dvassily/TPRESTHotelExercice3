@@ -22,7 +22,7 @@ namespace Hotel2Service.Controllers
         }
 
         // POST: api/Reservation
-        [HttpPost]
+        [HttpPost, ActionName("Reserver")]
         public async Task<ActionResult<long>> Post([FromBody] RequeteReservation requete)
         {
             List<HotelModel.Agence> agences = await _context.Agences.ToListAsync();

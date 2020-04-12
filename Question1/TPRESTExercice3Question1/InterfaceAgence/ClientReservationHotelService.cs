@@ -1,27 +1,24 @@
-﻿using HotelModel;
-using HotelProtocol;
+﻿using HotelProtocol;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace InterfaceAgence
 {
-    class ClientHotelService
+    internal class ClientReservationHotelService
     {
         private string Url;
         private HttpClient Client;
 
-        public ClientHotelService(string url)
+        public ClientReservationHotelService(string url)
         {
-            Client = new HttpClient();
             Url = url;
+            Client = new HttpClient();
         }
 
-        public async Task<List<Offre>> Rechercher(RequeteRecherche requete)
+        public async Task<int> Reserver(RequeteReservation requete)
         {
             var uri = string.Format(Url, string.Empty);
 
@@ -33,16 +30,12 @@ namespace InterfaceAgence
             var response = await Client.PostAsync(uri, byteContent);
             if (response.IsSuccessStatusCode)
             {
-                var content = await response.Content.ReadAsStringAsync();
+                int numeroReservation = Int32.Parse(await response.Content.ReadAsStringAsync());
 
-                List<Offre> offres = JsonConvert.DeserializeObject<List<Offre>>(content);
-                System.Diagnostics.Debug.WriteLine(content);
-
-                System.Diagnostics.Debug.WriteLine(offres);
-                return offres;
+                return numeroReservation;
             }
 
-            throw new ClientHotelServiceException(response.StatusCode, response.ReasonPhrase, Url);
+            throw new ClientReservationHotelServiceException(response.StatusCode, response.ReasonPhrase, Url);
         }
     }
 }

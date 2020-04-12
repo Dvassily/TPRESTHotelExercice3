@@ -28,5 +28,7 @@ namespace HotelModel
 
         [JsonProperty("hotelId")]
         public long HotelId { get; set; }
+
+        public string UrlReservation { get; set; } = "";
     }
 }
