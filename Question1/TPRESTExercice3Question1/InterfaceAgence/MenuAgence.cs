@@ -169,6 +169,7 @@ namespace InterfaceAgence
             Console.WriteLine("Hotel : " + offre.HotelId);
             Console.WriteLine("Identifiant de l'offre : " + offre.Id);
             Console.WriteLine("Chambre : " + offre.ChambreId);
+            Console.WriteLine("Image chambre : " + offre.ImageChambreUrl);
             Console.WriteLine("Date arrivee : " + offre.DateArrivee);
             Console.WriteLine("Date départ : " + offre.DateDepart);
             Console.WriteLine("Nombre de lits : " + offre.NombreDeLits);

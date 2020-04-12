@@ -12,6 +12,8 @@ namespace HotelModel
         public double Surface { get; set; }
         public double BasePrix { get; set; }
 
+        public string ImageUrl { get; set; }
+
         public double PrixCalcule(Agence agence)
         {
             if (agence == null)

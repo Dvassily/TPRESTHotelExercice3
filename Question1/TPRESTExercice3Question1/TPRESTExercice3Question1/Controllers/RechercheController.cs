@@ -53,7 +53,8 @@ namespace Hotel1Service.Controllers
                         Prix = c.PrixCalcule(agence),
                         ChambreId = c.Id,
                         HotelId = HOTEL_ID,
-                        UrlReservation = Request.Scheme + "://" + Request.Host + Request.PathBase + Url.Action("Reserver", "Reservation")
+                        UrlReservation = Request.Scheme + "://" + Request.Host + Request.PathBase + Url.Action("Reserver", "Reservation"),
+                        ImageChambreUrl = c.ImageUrl
                     };
 
                     _context.Offres.Add(offre);
